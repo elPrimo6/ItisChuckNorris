@@ -6,17 +6,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import ru.epetrashko.itischucknorris.repository.JokeRepository
+import javax.inject.Inject
 
 /**
  * @author e.petrashko
  */
-class MainViewModel(
-    private val jokeRepository: JokeRepository = JokeRepository()
+class MainViewModel @Inject constructor(
+    private val jokeRepository: JokeRepository
 ) : ViewModel() {
 
     private val _jokes = MutableLiveData("Чего ждем?")
     val jokes: LiveData<String> = _jokes
-
 
     fun generateJoke() {
         viewModelScope.launch {

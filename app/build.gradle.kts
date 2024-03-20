@@ -44,6 +44,7 @@ dependencies {
     val retrofit_version = "2.10.0"
     val gson_version = "2.9.0"
     val fragment_version = "1.6.2"
+    val dagger_verion = "2.51"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -54,6 +55,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation("com.squareup.retrofit2:converter-gson:$gson_version")
+
+    implementation("com.google.dagger:dagger:$dagger_verion")
+    kapt("com.google.dagger:dagger-compiler:$dagger_verion")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

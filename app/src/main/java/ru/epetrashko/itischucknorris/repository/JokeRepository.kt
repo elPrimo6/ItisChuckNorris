@@ -1,14 +1,12 @@
 package ru.epetrashko.itischucknorris.repository
 
 import ru.epetrashko.itischucknorris.service.JokeService
-import ru.epetrashko.itischucknorris.service.JokeServiceProvider
+import javax.inject.Inject
 
 /**
  * @author e.petrashko
  */
-class JokeRepository(
-    private val service: JokeService = JokeServiceProvider.createService()
-) {
+class JokeRepository @Inject constructor(private val service: JokeService) {
 
     suspend fun generateJoke(): String {
         return service.generateRandomJoke().value
